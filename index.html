@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace Automachine Solution</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="/image/favicon_io/favicon.ico">
+  <!-- Include this inside the <head> -->
+<style>
+  .slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  width: 50vw; /* Half the screen width */
+  height: 100vh; /* Or adjust to 50vh if you want half screen height */
+  position: relative;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Show full image */
+  background-color: #fff;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  color: #fff;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+  .slide-content h4 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slide-content p {
+    font-size: 1.2rem;
+  }
+
+  .navigation {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .navigation button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .navigation button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-blue-900 text-white p-4 flex justify-between items-center shadow-lg">
+    <div class="flex items-center">
+      <a href="index.html" class="flex items-center">
+        <img src="/image/your-logo.png" alt="Grace Automachine Logo" class="h-10 w-auto mr-3 grayscale hover:grayscale-0 transition-all duration-300">
+        <h1 class="text-3xl font-extrabold tracking-wide">Grace Automachine</h1>
+      </a>
+    </div>
+    <nav class="space-x-6 text-lg font-medium hidden md:flex">
+      <a href="index.html" class="hover:text-blue-200 transition duration-300 font-bold">Home</a>
+      <a href="products.html" class="hover:text-blue-200 transition duration-300">Products</a>
+      <a href="services.html" class="hover:text-blue-200 transition duration-300">Services</a>
+      <a href="blog.html" class="hover:text-blue-200 transition duration-300">Blog</a>
+      <a href="contact.html" class="hover:text-blue-200 transition duration-300">Contact</a>
+      <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-md text-white hover:bg-orange-600 transition duration-300">Login</a>
+    </nav>
+    <div class="md:hidden">
+      <button class="text-white focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="bg-blue-800 text-white text-center py-20">
+    <h2 class="text-4xl font-bold mb-4">Reliable Cash Counting Solutions</h2>
+    <p class="text-xl mb-6">Sales & Maintenance Experts</p>
+    <a href="contact.html" class="bg-orange-500 px-6 py-3 rounded-full text-white font-semibold hover:bg-orange-600 transition duration-300">Get in Touch</a>
+  </section>
+
+  <section class="py-16 text-center">
+    <h3 class="text-3xl font-bold mb-8">Why Choose Us?</h3>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="w-64 p-4 bg-white shadow rounded">
+        <h4 class="font-bold mb-2">Fast Service</h4>
+        <p>Quick turnaround on all machine maintenance & repairs.</p>
+      </div>
+      <div class="w-64 p-4 bg-white shadow rounded">
+        <h4 class="font-bold mb-2">Nationwide Delivery</h4>
+        <p>Trusted by clients across the country.</p>
+      </div>
+      <div class="w-64 p-4 bg-white shadow rounded">
+        <h4 class="font-bold mb-2">Trusted by Banks</h4>
+        <p>Proven track record with financial institutions.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+ <section class="py-16 bg-gray-100 text-center">
+    <h3 class="text-3xl font-bold mb-12">Our Valued Clients</h3>
+    <div class="flex flex-wrap justify-center gap-8 px-4">
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://media.licdn.com/dms/image/v2/C510BAQH0oU7bHf28dg/company-logo_200_200/company-logo_200_200/0/1630618371786/nabil_investment_banking_ltd_logo?e=2147483647&v=beta&t=axhWI04eD5CJ56f-dSL1HbgnkG5deggHTIGLW-DKaNc" alt="Nabil Bank Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Nabil Bank Limited</h4>
+        <p class="text-sm text-gray-600">Servicing their key branches across Kathmandu Valley.</p>
+        <a href="https://www.nabilbank.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://www.nimb.com.np/static/images/nimbl-lotus.png" alt="Nepal Investment Mega Bank Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Nepal Investment Mega Bank</h4>
+        <p class="text-sm text-gray-600">Providing solutions to their extensive network nationwide.</p>
+        <a href="https://www.nimb.com.np/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://i0.wp.com/corporatekhabar.com/wp-content/uploads/2021/11/Everest-Bank-Ltd.jpg?fit=900%2C900&ssl=1" alt="Everest Bank Limited Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Everest Bank Limited</h4>
+        <p class="text-sm text-gray-600">Supporting their branches in major cities across Nepal.</p>
+        <a href="https://everestbankltd.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://media.licdn.com/dms/image/v2/C510BAQGfkrrV9I4fcw/company-logo_200_200/company-logo_200_200/0/1630615058624/siddharthabanklimited_logo?e=2147483647&v=beta&t=ORPREiGxnHeoGKpKZVZVOlZA8mp2gqxbKCiFptwL-vQ" alt="Standard Chartered Bank Nepal Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Siddhartha Bank Limited</h4>
+        <p class="text-sm text-gray-600">Serving their primary branch network in Kathmandu.</p>
+        <a href="https://www.siddharthabank.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://banksnepal.com/laravel-filemanager/photos/1/2023%20News%20pic/Bank%20Logo%20Photos/sanima-bank_logo.jpg" alt="Sanima Bank Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Sanima Bank Limited</h4>
+        <p class="text-sm text-gray-600">Partnering with branches in various regions of Nepal.</p>
+        <a href="https://www.sanimabank.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://play-lh.googleusercontent.com/Kgsa8kpIaNYovbZ0GTKqspKh1h9nagdVumTXCUX9k1NcR1m-AlmjGlskLS2Uk9Eslw=w600-h300-pc0xffffff-pd" alt="Himalayan Bank Limited Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Himalayan Bank Limited</h4>
+        <p class="text-sm text-gray-600">Providing service to their branches across Nepal.</p>
+        <a href="https://www.himalayanbank.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://careerinnepal.com/uploads/company/logo/54a9b7e360f750c08966c4e95e82718f.jpg" alt="Citizens Bank International Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Citizens Bank International</h4>
+        <p class="text-sm text-gray-600">Collaborating with their widespread branch network.</p>
+        <a href="https://www.ctznbank.com/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://corporatekhabar.com/wp-content/uploads/2021/11/banijya-bank-1.jpg" alt="Rastriya Banijya Bank Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Rastriya Banijya Bank</h4>
+        <p class="text-sm text-gray-600">Supporting their extensive network across Nepal.</p>
+        <a href="https://www.rbb.com.np/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      <div class="w-72 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+        <div class="w-full h-20 flex items-center justify-center mb-4 transition-all duration-300">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3APexFWCQq6Xy3iNvzk2Xw9dKzPzvfcSDJA&s" alt="Agricultural Development Bank Limited Logo" class="max-h-full max-w-full object-contain">
+        </div>
+        <h4 class="font-bold text-xl mb-2 text-blue-800">Agricultural Development Bank Ltd.</h4>
+        <p class="text-sm text-gray-600">Assisting their branches in rural and urban areas.</p>
+        <a href="https://adbl.gov.np/" class="text-blue-600 hover:underline text-sm mt-3">View More Details</a>
+      </div>
+
+      </div>
+  </section>
+
+  
+
+<section id="products" class="relative text-white">
+  <div class="slider-container">
+    <div class="slides" id="slides">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <img src="https://www.kbcqualityproduct.com/images/product/12.jpg" alt="Bundle Counting Machine">
+        <div class="slide-content">
+          <h4>Bundle Counting Machine</h4>
+          <p>High-speed, accurate, easy to use.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="https://images.jdmagicbox.com/quickquotes/images_main/paras_fake_note_detector_fnd__11792993_0.jpg" alt="Fake Note Detector">
+        <div class="slide-content">
+          <h4>Fake Note Detector</h4>
+          <p>Protect your business from currency fraud.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="https://www.kbcqualityproduct.com/images/product/6.jpg" alt="Loose Counting Machine">
+        <div class="slide-content">
+          <h4>Loose Counting Machine</h4>
+          <p>Efficiently count and sort coins.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide">
+        <img src="https://5.imimg.com/data5/ANDROID/Default/2024/2/394646788/PX/KI/DX/118087444/product-jpeg-500x500.jpg" alt="Money Sorter">
+        <div class="slide-content">
+          <h4>Money Sorter</h4>
+          <p>Sort different denominations quickly.</p>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide">
+        <img src="https://qualitycomputer.com.np/web/image/product.template/40816/image_1024?unique=23589c8" alt="Cheque Writer">
+        <div class="slide-content">
+          <h4>Cheque Writer</h4>
+          <p>Automate cheque issuance accurately.</p>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide">
+        <img src="https://cdn.moglix.com/p/m2dKuFsVdLUWb-xxlarge.jpg" alt="Paper Shredder">
+        <div class="slide-content">
+          <h4>Paper Shredder</h4>
+          <p>Securely dispose of sensitive documents.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="navigation">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+  </div>
+</section>
+  <footer class="bg-blue-900 text-white p-8 mt-16">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h4 class="text-2xl font-bold mb-4">Grace Automachine</h4>
+        <p class="text-sm text-gray-300">Your trusted partner for cash counting solutions, sales, and maintenance.</p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="hover:underline text-gray-300">Home</a></li>
+          <li><a href="products.html" class="hover:underline text-gray-300">Products</a></li>
+          <li><a href="services.html" class="hover:underline text-gray-300">Services</a></li>
+          <li><a href="blog.html" class="hover:underline text-gray-300">Blog</a></li>
+          <li><a href="contact.html" class="hover:underline text-gray-300">Contact Us</a></li>
+          <li><a href="login.html" class="hover:underline text-gray-300">Login</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-bold mb-4">Get in Touch</h4>
+        <p class="mb-2 flex items-center justify-center md:justify-start">
+          <i class="fas fa-phone-alt mr-2"></i> +977-9851179758
+        </p>
+        <p class="mb-2 flex items-center justify-center md:justify-start">
+          <i class="fas fa-envelope mr-2"></i> info@graceautomachine.com
+        </p>
+        <p class="mb-4 flex items-start justify-center md:justify-start">
+          <i class="fas fa-map-marker-alt mr-2 mt-1"></i> Kathmandu, Bagmati Province, Nepal
+        </p>
+
+        <div class="flex justify-center md:justify-start space-x-4 text-2xl mt-4">
+          <a href="#" class="hover:text-gray-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-gray-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-gray-400" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-blue-700 pt-6 mt-8 text-sm text-gray-400 text-center">
+      <p>&copy; 2025 Grace Automachine Solution Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+ <!-- JavaScript -->
+<script>
+  const slides = document.getElementById('slides');
+ const totalSlides = slides.children.length;
+  let currentIndex = 0;
+  let slideInterval;
+
+  function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentIndex * 50}%)`;
+  }
+
+ function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlidePosition();
+}
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function startAutoplay() {
+    slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+  }
+
+  function stopAutoplay() {
+    clearInterval(slideInterval);
+  }
+
+  // Start autoplay when page loads
+  window.addEventListener('load', startAutoplay);
+</script>
+
+</body>
+</html>
